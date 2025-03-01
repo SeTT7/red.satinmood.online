@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        function redirecionar() {
+            // Obtém os parâmetros da URL atual
+            const params = window.location.search;
+            
+            // Salva os parâmetros no localStorage (opcional, se quiser armazenar)
+            if (params) {
+                localStorage.setItem("url_params", params);
+            }
+            
+            // Define a URL de destino
+            const destino = "https://exemplo.com" + params;
+            
+            // Redireciona após 50ms
+            setTimeout(() => {
+                window.location.href = destino;
+            }, 50);
+        }
+        
+        window.onload = redirecionar;
+    </script>
+</head>
+<body>
+    <p>Redirecionando...</p>
+</body>
+</html>
